@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 namespace Core;
 
@@ -31,7 +31,7 @@ class Route
 			foreach($_GET as $key =>$value){
 				$obj->get->$key = $value;
 			}
-			
+
 			foreach($_POST as $key =>$value){
 				$obj->get->$key = $value;
 			}
@@ -52,9 +52,9 @@ class Route
 
 			foreach ($this->routes as $route)
 				{$routeArray = explode('/', $route[0]);
-			
 
-			for ($i=0; $i < count($routeArray); $i++) { 
+
+			for ($i=0; $i < count($routeArray); $i++) {
 				if((strpos($routeArray[$i], "{") !==false) && (count($urlArray) == count($routeArray))){
 					$routeArray[$i] = $urlArray[$i];
 					$param[] = $urlArray[$i];
@@ -88,7 +88,7 @@ class Route
 			}
 
 		}else{
-			echo "Página não encontrada";
+			Container::pageNotFound();
 		}
 	}
 }
