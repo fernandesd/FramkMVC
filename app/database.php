@@ -10,13 +10,12 @@ return
     ],
 
     'mysql' => [
-        'host' => 'database.db',
-        'database' => 'curso microframework',
+        'host' => 'localhost',
+        'database' => 'microframework',
         'user' => 'root',
         'pass' => 'root',
         'charset' => 'utf8',
         'collation' => 'utf8_unicode_ci'
-
     ]
 ];
 
