@@ -2,11 +2,17 @@
     <div class="row">
         <h1 class="h1">
             <?php $this->getPageTitle(); ?>
+            <a href="" class="btn btn-primary pull-right">
+              <i class="glyphicon plyphicon-plus-sign"></i>Novo Post
+            </a>
         </h1>
     </div>
     <?php foreach($this->view->posts as $post){ ?>
     <div class="row">
-        <h3 class="h3"><?php echo $post->title; ?></h3>
+        <h3 class="h3">
+          <a href="/post/<?php echo $post->id; ?>/show">
+          <?php echo $post->title; ?></a>
+        </h3>
         <p class="text-justify"><?php echo $post->content; ?></p>
     </div>
     <?php } ?>
