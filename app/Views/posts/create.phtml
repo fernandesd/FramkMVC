@@ -1,0 +1,18 @@
+<div class="container">
+    <h1 class="h1"><?php $this->getPageTitle(); ?></h1>
+    <br>
+    <form action="/post/store" method="post" accept-charset="utf-8">
+        <div class="form-group">
+            <label for="title">Título</label>
+            <input type="text" name="title" class="form-control"value="" required autofocus>
+        </div>
+        <div class="form-group">
+            <label for="content">Conteúdo</label>
+            <textarea name="content" rows="15" class="form-control" required></textarea>
+        </div>
+
+        <a href="/posts" class="btn btn-default">Cancelar</a>
+        <button type="submit" class="btn btn-primary">Salvar</button>
+
+    </form>
+</div>

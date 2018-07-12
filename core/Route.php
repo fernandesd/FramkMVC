@@ -33,7 +33,7 @@ class Route
 			}
 
 			foreach($_POST as $key =>$value){
-				$obj->get->$key = $value;
+				$obj->post->$key = $value;
 			}
 
 			return $obj;
