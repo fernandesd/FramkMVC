@@ -13,7 +13,7 @@ return
         'host' => 'localhost',
         'database' => 'microframework',
         'user' => 'root',
-        'pass' => 'pirilampo',
+        'pass' => 'root',
         'charset' => 'utf8',
         'collation' => 'utf8_unicode_ci'
     ]
