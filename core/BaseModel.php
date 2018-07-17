@@ -64,6 +64,17 @@ abstract class BaseModel
             return [ $strKeys, $strBinds, $binds, $values ];
         }
 
+        protected function update(array $data, $id)
+        {
+          $query = "UPATE {$this->table} SET title=:title, content=:content WHERE id=id";
+          $stmt = $this->pdo->prepare($query);
+          $stmt->bindValue(":id", $id);
+
+          $result = $stmt->execute();
+          $stmt->closeCursor();
+          return $result;
+
+        }
 }
 
 

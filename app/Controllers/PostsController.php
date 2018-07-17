@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use Core\BaseController;
 use Core\Container;
+use Core\Redirect;
 
 class PostsController extends BaseController
 {
@@ -42,8 +43,35 @@ class PostsController extends BaseController
 			'content' => $request->post->content
 		];
 
-		$this->post->create($data);
+		if($this->post->create($data)){
+		Redirect::route('/posts');
+	}else {
+		echo "Erro ao inserir no banco de dados";
+		}
 	}
+
+	public function edit($id)
+	{
+		$this->view->post = $this->post->find($id);
+		$this->setPageTitle('Edit post - ' . $this->view->post->title);
+		$this->renderView('posts/edit', 'layout');
+
+	}
+
+	public function update($id, $request)
+		{
+			$data = [
+				'title' => $request->post->title,
+				'content' => $request->post->content
+			];
+
+			if($this->post->update($data, $id)){
+			Redirect::route('/posts');
+		}else {
+			echo "Erro ao atualizar";
+			}
+		}
+
 }
 
  ?>
