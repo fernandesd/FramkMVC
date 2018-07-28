@@ -66,12 +66,12 @@ abstract class BaseModel
 
         public function update(array $data, $id)
         {
-          $data = $this->prepareDataUpdate($data):
-          $query = "UPATE {$this->table} SET {$data[0]} WHERE id=id";
+          $data = $this->prepareDataUpdate($data);
+          $query = "UPDATE {$this->table} SET {$data[0]} WHERE id=:id";
           $stmt = $this->pdo->prepare($query);
           $stmt->bindValue(":id", $id);
           for($i = 0; $i < count($data[1]); $i++){
-            $stmt->bindValue("{$data [1][$i]}", $data[2][$i]);
+            $stmt->bindValue("{$data [1][$i]}","$data[2][$i]");
           }
           $result = $stmt->execute();
           $stmt->closeCursor();
