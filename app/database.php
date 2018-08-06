@@ -11,9 +11,9 @@ return
 
     'mysql' => [
         'host' => 'localhost',
-        'database' => 'microframework',
-        'user' => 'root',
-        'pass' => 'root',
+        'database' => 'id6658347_microframework',
+        'user' => 'id6658347_root',
+        'pass' => 'pirilampo',
         'charset' => 'utf8',
         'collation' => 'utf8_unicode_ci'
     ]

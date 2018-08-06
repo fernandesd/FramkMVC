@@ -72,6 +72,15 @@ class PostsController extends BaseController
 			}
 		}
 
+		public function delete ($id)
+		{
+			if($this->post->delete($id)){
+			Redirect::route('/posts');
+		}else {
+			echo "Erro ao excluir";
+			}
+		}
+
 }
 
  ?>
